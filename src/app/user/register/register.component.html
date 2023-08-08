@@ -10,6 +10,22 @@
       placeholder="Enter Name"
       minlength="3"
     />
+    <p
+      *ngIf="registerFrom.controls.name.errors?.['required']"
+      class="text-red-400"
+    >
+      Field is required.
+    </p>
+
+    <p
+      *ngIf="registerFrom.controls.name.errors?.['minlength']"
+      class="text-red-400"
+    >
+      Name is
+      {{ registerFrom.controls.name.errors?.['minlength'].actualLength }}
+      characters long. It must be at least
+      {{ registerFrom.controls.name.errors?.['minlength'].requiredLength }}
+    </p>
   </div>
   <!-- Email -->
   <div class="mb-3">
