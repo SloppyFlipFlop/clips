@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,5 +7,12 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  registerFrom = new FormGroup({});
+  registerFrom = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    age: new FormControl(''),
+    password: new FormControl(''),
+    confirm_password: new FormControl(''),
+    phoneNumber: new FormControl(''),
+  });
 }
