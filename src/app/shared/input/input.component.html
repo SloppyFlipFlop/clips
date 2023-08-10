@@ -5,6 +5,11 @@
   [placeholder]="placeholder"
 />
 <ng-container *ngIf="control.touched && control.dirty">
+  <p class="text-red-400" *ngIf="control.errors?.['pattern']">
+    Password must contain at least one uppercase letter, one lowercase, one
+    number, and one special character.
+  </p>
+
   <p *ngIf="control.errors?.['required']" class="text-red-400">
     Field is required.
   </p>
